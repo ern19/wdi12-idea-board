@@ -16,7 +16,7 @@ const IdeaSchema = new Schema({
     createdOn: {
         type: Date,
         default: Date.now,
-        required: true
+        
     }
 })
 
