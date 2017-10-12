@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
     response.sendFile(`${__dirname}/client/build/index.html`)
 })
 
-const port = process.env.port || 3001
+const port = process.env.PORT || 3001
 app.listen(port, () => {
     console.log("App is up on port ", port)
 })
