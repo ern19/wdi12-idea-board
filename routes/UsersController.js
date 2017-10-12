@@ -12,4 +12,14 @@ router.get("/", async(req, res) => {
 
 })
 
+router.post("/", async(req, res) => {
+  try {
+    const newUser = new UserModel(req.body.user)
+    console.log(newUser)
+    const save = await newUser.save()
+    res.json(save)
+  } catch (err) {
+    res.send(err)
+  }
+})
 module.exports = router
