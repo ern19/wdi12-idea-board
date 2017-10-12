@@ -12,6 +12,21 @@ router.get("/", async(req, res) => {
 
 })
 
+router.get("/:id", async(req, res) => {
+  try {
+    
+    const userId = req.params.id
+    console.log(userId)
+    const user = await UserModel.findById(userId)
+    console.log("hit")
+    res.json(user)
+  } catch (err) {
+    console.log("brrrp")
+    res.send(err)
+  }
+
+})
+
 router.post("/", async(req, res) => {
   try {
     const newUser = new UserModel(req.body.user)
