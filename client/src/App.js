@@ -4,6 +4,7 @@ import HomePage from "./components/Home/HomePage"
 import LoginPage from "./components/Login/LoginPage"
 import IdeaPage from "./components/Idea/IdeaPage"
 
+
 class App extends Component {
   
   render() {
@@ -15,17 +16,15 @@ class App extends Component {
               <Link to="/">Home</Link>
             </div>
             <div>
-              <Link to="/user">Ideas</Link>
+              <Link to="/idea">Ideas</Link>
             </div>
             <div>
               <Link to="/login">Login</Link>
             </div>
-          </div>
-        
-        
+          </div>       
           <Switch>
             <Route exact path="/" component={HomePage}/>
-            <Route exact path="/user" component={IdeaPage}/>
+            <Route exact path="/idea" component={IdeaPage}/>
             <Route exact path="/login" component={LoginPage}/>
           </Switch>
         </div>
