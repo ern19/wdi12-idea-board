@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
-Mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise
 const app = express()
 mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 const connection = mongoose.connection
@@ -21,7 +21,7 @@ app.get("/", (request, response) => {
     response.send("Hello world")
 })
 
-const port = process.env.port || 3000
+const port = process.env.port || 3001
 app.listen(port, () => {
     console.log("App is up on port ", port)
 })
